@@ -8,7 +8,7 @@ if (!file.exists(destfile)) {
         unzip(zipfile) 
 }
 
-dataset <- read.table(destfile, sep=";", header=T)
+dataset <- read.table(destfile, sep=";", header=T, na.strings = "?")
 
 dataset$Date <- as.Date(as.character(dataset$Date), "%d/%m/%Y")
 
